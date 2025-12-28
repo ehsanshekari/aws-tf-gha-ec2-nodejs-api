@@ -4,8 +4,6 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
 import compression from 'compression';
-import swaggerJsdoc from 'swagger-jsdoc';
-import swaggerUi from 'swagger-ui-express';
 import rateLimit from 'express-rate-limit';
 
 import healthCheckRoutes from './health-check/health-check.routes';
@@ -14,7 +12,6 @@ import authRoutes from './auth/auth.routes';
 import logger from './utils/logger';
 import errorMiddleware from './middleware/errorMiddleware';
 import { ENV, MAX_REQUESTS, PORT, SERVER_TIMEOUT, WINDOW_MS } from './config/config';
-import { SWAGGER_OPTIONS } from './config/swagger';
 
 const app = express();
 const limiter = rateLimit({
@@ -41,17 +38,6 @@ const morganMiddleware = morgan('combined', {
   },
 });
 app.use(morganMiddleware);
-
-const specs = swaggerJsdoc(SWAGGER_OPTIONS);
-app.use(
-  '/api-doc',
-  swaggerUi.serve,
-  swaggerUi.setup(specs, { explorer: true })
-);
-app.use('/swagger.json', (_req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(specs);
-});
 
 // Routes
 app.use('/', healthCheckRoutes);
