@@ -1,0 +1,25 @@
+### Health Check
+Get http://127.0.0.1:5000/health
+Content-Type: application/json
+
+### Register
+POST http://127.0.0.1:5000/v1/auth/register
+Content-Type: application/json
+
+{
+    "email": "test3@email.com",
+    "password": "password",
+    "firstName": "firstName",
+    "lastName": "lastName",
+    "username": "myusername3"
+}
+
+
+### Login
+POST http://127.0.0.1:5000/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@email.com",
+    "password": "password"
+}

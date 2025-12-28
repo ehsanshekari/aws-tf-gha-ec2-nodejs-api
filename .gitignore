@@ -1,0 +1,55 @@
+# external dependencies
+node_modules/
+
+# IDEs
+/.codelite
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# compiled output
+/dist
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+.terraform
+.terraform/
+
+# Tests
+tests/coverage
+tests/.nyc_output
+tests/playground
+
+# Config
+config/development.json
+config/production.json
+config/dev.json
+config/prod.json
+
+# Playground
+/playground
+
+# logs
+error.txt
+app.log
+debug.log
+
+.env
+tsconfig.tsbuildinfo
