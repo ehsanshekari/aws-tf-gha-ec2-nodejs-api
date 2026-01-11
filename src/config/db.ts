@@ -12,8 +12,8 @@ export const DB_CONFIG = {
     migrations: ['dist/migrations/*.js'],
     synchronize: false,
     supportBigNumbers: true,
-    // ssl: {
-    //   rejectUnauthorized: false,
-    // },
+    ssl: {
+      rejectUnauthorized: false,
+    },
   };
   
